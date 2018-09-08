@@ -26,6 +26,7 @@ class Game:
         #should be a thing to highlight the ones that are the correct number
 
     def deal_hands(self):
+        #deal to players!
 
 if __name__ == '__main__':
     d1 = Deck()
