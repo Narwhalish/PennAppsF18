@@ -26,7 +26,8 @@ class Deck:
     card_suits = ['C', 'D', 'H', 'S']
 
     def __init__(self):
-        self.deck = [rank + suit for rank in self.card_ranks for suit in self.card_suits]
+        self.deck = [Card(rank + suit) for rank in self.card_ranks for suit in self.card_suits]
+        self.deck.append(Card('JB'), Card('JS'))
 
     def shuffle_deck(self):
         random.shuffle(self.deck)
@@ -36,23 +37,23 @@ class Deck:
         print(self.deck)
 
 class Player:
+    contribution = 0
     hand = []
-    teammates = []
-    def __init__(self, num):
-        self.number = num
-        """I wanted the players to be numbered around the table starting from
-        the one with the bottom, and then their partners will also be like numbers wow"""
 
-    def deal_hand(self):
-        pass
+    def __init__(self, name, player_number):
+        self.name = name
+        self.player_number = player_number
 
     def configure_bottom(self, bottom):
         #bottom is a list of cards
         #and then return the new list I guess
 
 class Game:
+
     decks = []
     bottom = []
+    turn = 0
+    score = [0, 0]
     def __init__(self, num_players):
         self.num_players = num_players
         self.num_decks = num_players/2
@@ -60,6 +61,13 @@ class Game:
     def determine_starter_2():
         #randomly pick a player to get the bottom so that player would be number 1
 
+    def __init__(self, number_of_decks):
+        self.decks = [Deck() for _ in range(number_of_decks)]
+
+    def end_turn(self):
+        self.turn += 1
+
+    def deal_hands(self):
 
 
 if __name__ == '__main__':
