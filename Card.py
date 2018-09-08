@@ -9,6 +9,7 @@ class Card:
     def get_suit(self):
         return self.suit
 
+    #possibly don't need?
     def get_value(self):
         value_cards = {'5': 5, '10': 10, 'K': 10}
         return value_cards[self.rank]
