@@ -1,9 +1,10 @@
 class Player:
-    contribution = 0 #what is this for??? 
     hand = []
 
-    def __init__(self, name, player_number):
-        self.name = name
+    def __init__(self, player_number):
+        self.player_number = player_number
+
+    def update_player_number(self, player_number):
         self.player_number = player_number
 
     def add_to_hand(self, card):
