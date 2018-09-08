@@ -11,18 +11,23 @@ class Game:
     bottom = []
     turn = 0
     score = [0, 0]
-    
-    def __init__(self, num_players):
-        self.players = [Player(x) for x in range(1, num_players + 1)]
-        self.decks = [Deck() for _ in range(num_players / 2)]
 
-    def determine_starter_2():
-        #randomly pick a player to get the bottom so that player would be number 1
+    def __init__(self, number_of_players):
+        self.players = [Player(player_number) for player_number in range(1, number_of_players + 1)]
+        self.decks = [Deck() for _ in range(number_of_players / 2)]
+
+    def deal_hands(self):
+        for p in self.players:
+            if self.decks[0].cards_left:
+                p.add_to_hand(self.decks[0].deal_card())
+            else self.decks[1].cards_left:
+                p.add_to_hand(self.decks[1].deal_card())
+
+    def determine_starter(self):
+        
 
     def end_turn(self):
         self.turn += 1
-
-    def deal_hands(self):
 
 if __name__ == '__main__':
     d1 = Deck()

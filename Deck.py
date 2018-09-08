@@ -7,10 +7,12 @@ class Deck:
     def __init__(self):
         self.deck = [Card(rank + suit) for rank in self.card_ranks for suit in self.card_suits]
         self.deck.append(Card('JB'), Card('JS'))
+        self.cards_left = True
 
     def shuffle_deck(self):
         random.shuffle(self.deck)
 
-    #temp method
-    def print_deck(self):
-        print(self.deck)
+    def deal_card(self):
+        if len(self.deck) == 1:
+            self.cards_left = False
+        return self.deck.pop(0)
