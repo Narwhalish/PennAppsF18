@@ -8,20 +8,16 @@ import random
 import Player, Deck, Card
 
 class Game:
-
-    decks = []
     bottom = []
     turn = 0
     score = [0, 0]
+    
     def __init__(self, num_players):
-        self.num_players = num_players
-        self.num_decks = num_players/2
+        self.players = [Player(x) for x in range(1, num_players + 1)]
+        self.decks = [Deck() for _ in range(num_players / 2)]
 
     def determine_starter_2():
         #randomly pick a player to get the bottom so that player would be number 1
-
-    def __init__(self, number_of_decks):
-        self.decks = [Deck() for _ in range(number_of_decks)]
 
     def end_turn(self):
         self.turn += 1
