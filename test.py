@@ -35,6 +35,17 @@ class Deck:
     def print_deck(self):
         print(self.deck)
 
+class Player:
+    hand = []
+    teammates = []
+    def __init__(self, num):
+        self.number = num
+        """I wanted the players to be numbered around the table starting from
+        the one with the bottom, and then their partners will also be like numbers wow"""
+
+    def deal_hand(self):
+        pass
+
 class Game:
 
 
