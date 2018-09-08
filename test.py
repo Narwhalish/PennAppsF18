@@ -44,9 +44,22 @@ class Player:
         self.name = name
         self.player_number = player_number
 
+    def configure_bottom(self, bottom):
+        #bottom is a list of cards
+        #and then return the new list I guess
+
 class Game:
+
+    decks = []
+    bottom = []
     turn = 0
     score = [0, 0]
+    def __init__(self, num_players):
+        self.num_players = num_players
+        self.num_decks = num_players/2
+
+    def determine_starter_2():
+        #randomly pick a player to get the bottom so that player would be number 1
 
     def __init__(self, number_of_decks):
         self.decks = [Deck() for _ in range(number_of_decks)]
@@ -55,7 +68,7 @@ class Game:
         self.turn += 1
 
     def deal_hands(self):
-        
+
 
 if __name__ == '__main__':
     d1 = Deck()
