@@ -35,6 +35,9 @@ class Game:
         #should be a thing to highlight the ones that are the correct number
         pass
 
+    def deal_hands(self):
+        #deal to players!
+
 if __name__ == '__main__':
     root = Game(2)
     root.
