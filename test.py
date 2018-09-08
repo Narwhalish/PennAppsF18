@@ -26,7 +26,7 @@ class Deck:
     card_suits = ['C', 'D', 'H', 'S']
 
     def __init__(self):
-        self.deck = [rank + suit for rank in self.card_ranks for suit in self.card_suits]
+        self.deck = [Card(rank + suit) for rank in self.card_ranks for suit in self.card_suits]
 
     def shuffle_deck(self):
         random.shuffle(self.deck)
@@ -35,8 +35,26 @@ class Deck:
     def print_deck(self):
         print(self.deck)
 
-class Game:
+class Player:
+    contribution = 0
+    def __init__(self, name)
 
+class Team:
+    score = 0
+
+    def __init__(self):
+        self.game_role =
+
+class Game:
+    teams
+
+    def __init__(self):
+        #anything?
+
+    def start_game(self, number_of_decks):
+        decks = [Deck() for _ in range(number_of_decks)]
+
+    def get_scores
 
 if __name__ == '__main__':
     d1 = Deck()
