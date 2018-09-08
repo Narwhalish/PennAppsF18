@@ -1,5 +1,5 @@
 class Player:
-    contribution = 0
+    contribution = 0 #what is this for??? 
     hand = []
 
     def __init__(self, name, player_number):
