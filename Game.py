@@ -11,6 +11,11 @@ class Game:
     bottom = []
     turn = 0
     score = [0, 0]
+    advantage = "" #could be odd team or even team
+
+    def __init__(self, num_players):
+        self.players = [Player(x) for x in range(1, num_players + 1)]
+        self.decks = [Deck() for _ in range(num_players / 2)]
 
     def __init__(self, number_of_players):
         self.players = [Player(player_number) for player_number in range(1, number_of_players + 1)]
@@ -24,10 +29,12 @@ class Game:
                 p.add_to_hand(self.decks[1].deal_card())
 
     def determine_starter(self):
-        
 
-    def end_turn(self):
-        self.turn += 1
+
+    def determine_starter_normal():
+        #deal cards visually and slowly
+        #allow players to select a card to flip
+        #should be a thing to highlight the ones that are the correct number
 
 if __name__ == '__main__':
     d1 = Deck()
