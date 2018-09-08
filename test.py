@@ -46,7 +46,20 @@ class Player:
     def deal_hand(self):
         pass
 
+    def configure_bottom(self, bottom):
+        #bottom is a list of cards
+        #and then return the new list I guess
+
 class Game:
+    decks = []
+    bottom = []
+    def __init__(self, num_players):
+        self.num_players = num_players
+        self.num_decks = num_players/2
+
+    def determine_starter_2():
+        #randomly pick a player to get the bottom so that player would be number 1
+
 
 
 if __name__ == '__main__':
