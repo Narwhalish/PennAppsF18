@@ -34,19 +34,23 @@ class Game:
                     break
 
     def determine_starter_two(self):
-        index = 0
-        place = 0
+        index = 0   #index of hand that we're checking
+        place = 0   #the place in the list where Player One is found
         for person in players:
             if person.hand[index].get_rank() == '2':
                 place = players.index(person)
                 break
             index += 1
 
+        player_numbers = 1    #to newly set for players
         for x in range(0,4):
-            pass
-
-
-        #go through players list and check indices of cards to see if the value is a 2!
+            if place < 4:
+                players[place].update_player_number(player_numbers)
+                place, player_numbers += 1
+            else:
+                place = place - 4
+                players[place].update_player_number(player_numbers)
+                place, player_numbers += 1
 
     def determine_starter_normal(self):
         #deal cards visually and slowly
