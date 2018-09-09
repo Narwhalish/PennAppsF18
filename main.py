@@ -22,7 +22,10 @@ def intro_screen():
 
     #start and quit buttons
     btn_font = pygame.font.Font(None, 30)
-    start_text = btn_font.render("Start", 1, (0,0,0)))
+    start_text = btn_font.render("Start", 1, (0,0,0))
     quit_text = btn_font.render("Quit", 1, (0,0,0))
-    start_btn = pygame.draw.rect(screen, green, [1, 1, 1, 1])
-    quit_btn = pygame.draw.rect(screen, green, [1, 1, 1, 1])
+    startpos = start_text.get_rect()
+    quitpos = quit_text.get_rect()
+    screen.blit(start, startpos)
+    screen.blit(quit, quitpos)
+    pygame.display.update()
