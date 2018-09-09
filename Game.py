@@ -30,17 +30,16 @@ class Game:
                 else:
                     break
 
+#
+
     def determine_starter_two(self):
-        
+
 
     def determine_starter_normal(self):
         #deal cards visually and slowly
         #allow players to select a card to flip
         #should be a thing to highlight the ones that are the correct number
         pass
-
-    def deal_hands(self):
-        #deal to players!
 
 if __name__ == '__main__':
     root = Game(2)
