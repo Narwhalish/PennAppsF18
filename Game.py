@@ -12,13 +12,14 @@ class Game:
     def __init__(self, number_of_players):
         self.number_of_players  = number_of_players
         self.players = [Player(player_number) for player_number in range(1, number_of_players + 1)]
-        self.decks = [Deck() for _ in range(number_of_players / 2)]
+        self.decks = [Deck() for _ in range(number_of_players // 2)]
 
     def deal_hands(self):
         cards_per_player = {4: 25, 6: 26, 8: 26, 10: 26}
         pile = []
 
         for d in self.decks:
+            d.shuffle_deck()
             pile += d.get_deck()
 
         while True:
@@ -27,7 +28,8 @@ class Game:
                     # p.add_to_hand(pile.pop(0))
                     card = pile.pop(0)
                     p.add_to_hand(card)
-                    print('player ' + str(p.player_number) + ' has '+ card.rank + card.suit)
+                    print('player ' + str(p.player_number) + ' has '+ card.rank + card.suit + ' as card # ' + str(len(p.hand)))
+                    # print(str(p.hand) + '\n')
                 else:
                     break
 
@@ -58,5 +60,5 @@ class Game:
         pass
 
 if __name__ == '__main__':
-    root = Game(2)
-    root.
+    root = Game(4)
+    root.deal_hands()
