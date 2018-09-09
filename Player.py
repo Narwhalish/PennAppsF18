@@ -8,8 +8,8 @@ class Player:
         self.player_number = player_number
 
     def find_power_cards(self, trump_val):
-        power_card_indices = [i for i, card in enumerate(self.hand) if card.get_rank() == trump_val]
-        self.power_cards = dict(zip(power_card_indices, [self.hand[i].get_rank() + self.hand[i].get_suit() for i in power_card_indices]))
+        power_card_indices = [i for i, card in enumerate(self.hand) if card.rank == trump_val]
+        self.power_cards = dict(zip(power_card_indices, [self.hand[i].rank + self.hand[i].suit for i in power_card_indices]))
 
     def add_to_hand(self, card):
         self.hand.append(card)

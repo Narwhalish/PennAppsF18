@@ -1,11 +1,9 @@
 #* /usr/bin/python3
 # -*- encoding: utf-8 -*-
 
-import pygame
-import os
-import sys
-import random
-import Player, Deck, Card
+from Player import Player
+from Deck import Deck
+from Card import Card
 
 class Game:
     bottom = []
@@ -26,7 +24,10 @@ class Game:
         while True:
             for p in self.players:
                 if len(p.hand) < cards_per_player[self.number_of_players]:
-                    p.add_to_hand(pile.pop(0))
+                    # p.add_to_hand(pile.pop(0))
+                    card = pile.pop(0)
+                    p.add_to_hand(card)
+                    print('player ' + str(p.player_number) + ' has '+ card.rank + card.suit)
                 else:
                     break
 
@@ -40,6 +41,7 @@ class Game:
             index += 1
 
         for x in range(0,4):
+            
 
 
         #go through players list and check indices of cards to see if the value is a 2!
