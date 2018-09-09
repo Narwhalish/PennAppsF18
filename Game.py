@@ -5,9 +5,7 @@ import pygame
 import os
 import sys
 import random
-from Player import Player
-from Deck import Deck
-from Card import Card
+import Player, Deck, Card
 
 class Game:
     bottom = []
@@ -16,15 +14,13 @@ class Game:
     def __init__(self, number_of_players):
         self.number_of_players  = number_of_players
         self.players = [Player(player_number) for player_number in range(1, number_of_players + 1)]
-        self.decks = [Deck() for _ in range(number_of_players // 2)]
+        self.decks = [Deck() for _ in range(number_of_players / 2)]
 
     def deal_hands(self):
         cards_per_player = {4: 25, 6: 26, 8: 26, 10: 26}
         pile = []
 
-
         for d in self.decks:
-            d.shuffle_deck()
             pile += d.get_deck()
 
         while True:
@@ -33,13 +29,20 @@ class Game:
                     p.add_to_hand(pile.pop(0))
                 else:
                     break
-    #temp method
-    def print_player_hands(self):
-        for p in self.players:
-            print(p.player_number + 'has a hand of: ' + p.hand)
 
     def determine_starter_two(self):
-        pass
+        index = 0
+        place = 0
+        for person in players:
+            if person.hand[index].get_rank() == '2':
+                place = players.index(person)
+                break
+            index += 1
+
+        for x in range(0,4):
+
+
+        #go through players list and check indices of cards to see if the value is a 2!
 
     def determine_starter_normal(self):
         #deal cards visually and slowly
@@ -48,6 +51,5 @@ class Game:
         pass
 
 if __name__ == '__main__':
-    root = Game(4)
-    root.deal_hands()
-    root.print_player_hands()
+    root = Game(2)
+    root.
