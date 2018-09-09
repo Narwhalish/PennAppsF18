@@ -1,7 +1,7 @@
 class Player:
-    hand = []
 
     def __init__(self, player_number):
+        self.hand = []
         self.player_number = player_number
 
     def update_player_number(self, player_number):
