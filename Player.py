@@ -1,11 +1,15 @@
 class Player:
     hand = []
+    power_cards = {}
 
     def __init__(self, player_number):
         self.player_number = player_number
 
     def update_player_number(self, player_number):
         self.player_number = player_number
+
+    def find_power_cards(self, trump_val):
+        self.power_cards[trump_val]
 
     def add_to_hand(self, card):
         self.hand.append(card)

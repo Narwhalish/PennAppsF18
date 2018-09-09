@@ -9,8 +9,6 @@ import Player, Deck, Card
 
 class Game:
     bottom = []
-    turn = 0
-    score = [0, 0]
     advantage = "" #could be odd team or even team
 
     def __init__(self, number_of_players):
@@ -20,14 +18,20 @@ class Game:
 
     def deal_hands(self):
         cards_per_player = {4: 25, 6: 26, 8: 26, 10: 26}
+        pile = []
+
         for d in self.decks:
-            while d.get_cards_left() != 0:
-                for p in self.players:
-                    if len(p.hand) < self.cards_per_player[self.number_of_players]:
-                        p.add_to_hand(d.deal_card())
+            pile += d.get_deck()
+
+        while True:
+            for p in self.players:
+                if len(p.hand) < cards_per_player[self.number_of_players]:
+                    p.add_to_hand(pile.pop(0))
+                else:
+                    break
 
     def determine_starter_two(self):
-        pass
+        
 
     def determine_starter_normal(self):
         #deal cards visually and slowly

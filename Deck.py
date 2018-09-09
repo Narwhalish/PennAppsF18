@@ -12,8 +12,8 @@ class Deck:
     def shuffle_deck(self):
         random.shuffle(self.deck)
 
+    def get_deck(self):
+        return self.deck
+
     def get_cards_left(self):
         return len(self.deck)
-
-    def deal_card(self):
-        return self.deck.pop(0)
