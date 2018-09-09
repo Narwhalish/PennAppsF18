@@ -51,6 +51,7 @@ class Game:
                 place, player_numbers += 1
 
     def determine_starter_normal(self):
+        
         #deal cards visually and slowly
         #allow players to select a card to flip
         #should be a thing to highlight the ones that are the correct number
