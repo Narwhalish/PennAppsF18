@@ -1,7 +1,7 @@
 class Card:
-    def __init__(self, card_code):
-        self.rank = card_code[0]
-        self.suit = card_code[1]
+    def __init__(self, card_rank, card_suit):
+        self.rank = card_rank
+        self.suit = card_suit
 
     def get_rank(self):
         return self.rank
