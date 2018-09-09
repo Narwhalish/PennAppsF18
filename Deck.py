@@ -1,3 +1,6 @@
+#* /usr/bin/python3
+# -*- encoding: utf-8 -*-
+
 from Card import Card
 import random
 
@@ -9,7 +12,7 @@ class Deck:
         self.deck = [Card(rank, suit) for rank in self.card_ranks for suit in self.card_suits]
         self.deck.append(Card('J', 'B'))
         self.deck.append(Card('J', 'S'))
-        
+
         self.cards_left = True
 
     def shuffle_deck(self):

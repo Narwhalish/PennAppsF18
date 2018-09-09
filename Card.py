@@ -1,3 +1,6 @@
+#* /usr/bin/python3
+# -*- encoding: utf-8 -*-
+
 class Card:
     def __init__(self, card_rank, card_suit):
         self.rank = card_rank

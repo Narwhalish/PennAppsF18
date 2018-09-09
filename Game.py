@@ -25,11 +25,8 @@ class Game:
         while True:
             for p in self.players:
                 if len(p.hand) < cards_per_player[self.number_of_players]:
-                    # p.add_to_hand(pile.pop(0))
-                    card = pile.pop(0)
-                    p.add_to_hand(card)
-                    print('player ' + str(p.player_number) + ' has '+ card.rank + card.suit + ' as card # ' + str(len(p.hand)))
-                    # print(str(p.hand) + '\n')
+                    p.add_to_hand(pile.pop(0))
+                    # print('player ' + str(p.player_number) + ' has '+ card.rank + card.suit + ' as card # ' + str(len(p.hand)))
                 else:
                     break
 
@@ -46,14 +43,16 @@ class Game:
         for x in range(0,4):
             if place < 4:
                 players[place].update_player_number(player_numbers)
-                place, player_numbers += 1
+                place += 1
+                player_numbers += 1
             else:
                 place = place - 4
                 players[place].update_player_number(player_numbers)
-                place, player_numbers += 1
+                place += 1
+                player_numbers += 1
 
     def determine_starter_normal(self):
-        
+
         #deal cards visually and slowly
         #allow players to select a card to flip
         #should be a thing to highlight the ones that are the correct number
