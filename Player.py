@@ -17,3 +17,4 @@ class Player:
     def configure_bottom(self, bottom):
         #bottom is a list of cards
         #and then return the new list I guess
+        pass
