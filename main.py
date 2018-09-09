@@ -10,11 +10,11 @@ def main():
     screen.fill(green)
     pygame.display.update()
 
-    font = pygame.font.Font(None, 20)
+    font = pygame.font.Font(None, 50)
     text = font.render("Level Up!", 1, (0,0,0))
     textpos = text.get_rect()
-    textpos.centerx = background.get_rect().centerx
+    textpos.centerx = screen.get_rect().centerx
+    textpos.centery = screen.get_rect().centery
     screen.blit(text, textpos)
 
-    screen.blit(background, (0, 0))
     pygame.display.flip()
